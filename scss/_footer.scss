@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+footer {
+    height: 260px;
+    background-color:rgb(17, 17, 17);
+    opacity: 1;
+    color: $colorPredeterminado;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 5em;
+    font-family: $tipografia;
+    line-height: 2em;
+}
+.anchuraLinks{
+    width: 4em;
+}

@@ -1,0 +1,63 @@
+@import "variables.scss";
+
+//HEADER----------------------------------
+header{
+    height: auto;
+    background-color: $colorFondo;
+    background-repeat: no-repeat;
+    background-position: left;
+         img {
+            height: auto;
+            width: auto;
+            display: block;
+            margin-left: 1em;
+            margin-right: auto;
+            margin-top: 1.5em;
+            margin-bottom: 3em;
+}
+}
+ 
+ //NAV----------------------------------------
+
+ ul {
+    list-style: none;
+    background-color: $colorFondo;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    height: 50%;
+    justify-content:right;
+    align-items: center;
+        
+            li {
+            color: $colorPredeterminado;
+            font-size: 20px;
+            padding: 14px 16px;
+            text-decoration: none;  
+            font-family: $tipografia;
+            &hover{
+                background-color: rgb(91, 101, 189);
+                color: white;
+                text-decoration: none;
+
+                    a:-webkit-any-link { 
+                    text-decoration: none;
+                    color:blue;
+    }
+}
+}
+}
+
+nav {
+    text-align: center;
+    
+}
+ul.navbar-nav{
+    text-align: left;
+    height: 30%;
+    font-size: 20px;
+    
+}
+.iconoPeque {
+    width: 200px;
+}

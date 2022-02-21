@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import "variables.scss";
+@import "header.scss";
+@mixin titulosPrincipales ($color, $tipografia, $tamanio, $alineacion, $margenUp, $margenDown, $animacionTiempo, $animacion, $transicion){
+    color: $color;
+    font-family: $tipografia;
+    font-size: $tamanio;
+    text-align: $alineacion;
+    margin-top: $margenUp;
+    margin-bottom: $margenDown;
+    animation-duration: $animacionTiempo;
+    animation-name: $animacion;
+    transition: $transicion; 
+
+}
+    
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ // GENERALES---------------------------------------------
+h1 {
+
+    @include titulosPrincipales($colorPredeterminado, $tipografia, 38px , center, 6em, 1em, 2s,"zoom-in" , all 2s)
+    
+}
+    
+h2 {
+    color: $colorPredeterminado;
+    font-size: 30px;
+    text-align: left;
+    margin-top: 3em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+    font-family: $tipografia;
+}
+h3{
+    color: $colorPredeterminado;
+    font-size: 25px;
+    text-align: left;
+    margin-top: 2em;
+    margin-left: 2em;
+    font-family: $tipografia;    
+}
+h4{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: 2em;
+    font-family: $tipografia;
+    vertical-align: middle; 
+}
+
+
+p {
+    color: $colorParrafos;
+    font-size: 20px;
+    font-family: $tipografia;
+    margin-left: 3em;
+}
+ body {
+ 
+    background-color: $colorFondo;
+ }
+
+
+// INDEX --------------------------------
+
+.divGrad {
+    background-image: linear-gradient(to bottom right, blue, rgb(5, 5, 5));
+    font-size: 35px;
+    height: 100px;
+    color: white;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: $tipografia;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+li.tiposClases {
+    height: 80px;
+    width: 200px;
+    background-color:black;
+    text-align: center;
+    line-height: 100%;
+    border: blue solid;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 50px rgb(161, 161, 226);
+    transition: height 0s, width 0s;
+    &hover{height: 60px; 
+            width: 200x;
+
+    }
+
+    
+}
+#ofrecemos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+a.itemListServicios {
+    color:white;
+}
+
+.fotosMuestra{
+        width: 30%;
+        margin-left: 10%;
+}
+.container{
+    align-items: center;
+    justify-content: center;
+}
+.row{
+    margin-top: 4em;
+}
+.imagen_center{
+    width: 100%;
+    margin-left: 0em;
+}
+
+a.btn.btn-primary{
+    color: white;
+}
+// CONTACTO --------------------------------------
+form{
+    color:$colorPredeterminado;
+    font-family: $tipografia;
+    margin-left: 2em;
+}
+
+input {
+    width: 40%;
+  }
+  
+input[type=text] {
+    padding: 10px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+input[type=email] {
+        padding: 10px 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+}     
+label{
+    color: $colorPredeterminado;
+    font-size: 20px;
+    font-family: $tipografia;
+}
+input [type=checkbox]{
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+input[type=submit]{
+    width: 200px;
+    height: 50px; 
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: $tipografia; 
+    background-color:$colorPredeterminado;
+}
+
+.btn-light{
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: $tipografia; 
+    background-color:$colorPredeterminado;
+}
+//QUIENES SOMOS ----------------------------------
+
+#quienesSomos{
+    margin-top: 3em;
+    margin-right: 3em;
+    text-align: justify;
+    font-style: italic;
+}
+.imagenCentrada{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+
+}
+.containerQuienesSomos{
+    margin-top: 5em;;
+    background-color: $colorFondo;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 50%;
+    grid-template-rows: 50%;
+    grid-template-areas: "imagen descripcion";        
+    align-items: center;
+    justify-content: center;
+}
+
+.boton{
+    @extend .btn--Gas;
+    margin-top: 3em;
+}
+
+// SERVICIOS ------------------------------------
+$estilos:(
+    color: white,
+    text-decoration:none,
+    height: 150px,
+    font-size: 25px,
+
+);
+
+$servicios:(
+    Plomeria: rgb(51, 51, 238),
+    Gas: rgb(75, 75, 196),
+    Soluciones-para-el-hogar:rgb(65, 65, 150)
+);
+@each $serv, $color in $servicios {
+    .btn--#{$serv}{
+        background-color: $color;  
+
+    }
+} 
+.btn--Plomeria {
+    a { 
+        color: map-get($estilos, color);
+        text-decoration:map-get($estilos, text-decoration);
+        height: map-get($estilos, height);
+        font-size:map-get($estilos, font-size);
+        font-family: $tipografia;
+        
+    }
+    }
+.btn--Gas {
+        a { 
+        color: map-get($estilos, color);
+        text-decoration:map-get($estilos, text-decoration);
+        height: map-get($estilos, height);
+        font-size:map-get($estilos, font-size);
+        font-family: $tipografia;
+            
+        }    
+}
+.btn--Soluciones-para-el-hogar {
+    a { 
+        color: map-get($estilos, color);
+        text-decoration:map-get($estilos, text-decoration);
+        height: map-get($estilos, height);
+        font-size:map-get($estilos, font-size);
+        font-family: $tipografia;
+        
+    }
+}
+.mapa{
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    
+}
+.accordion-button{
+    font-family: $tipografia; 
+    background-color: $colorPredeterminado;
+}
+
+
+//NUESTROS TRABAJOS-----------------------------
+.videosFace{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    align-items: stretch;
+    margin-left: 2em;
+    margin-right: 2em;
+}
